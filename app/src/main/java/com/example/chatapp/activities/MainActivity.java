@@ -1,6 +1,7 @@
 package com.example.chatapp.activities;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.chatapp.adapters.RecentConversationsAdapter;
+import com.example.chatapp.database.DatabaseHelper;
 import com.example.chatapp.databinding.ActivityMainBinding;
 import com.example.chatapp.listeners.ConversionListener;
 import com.example.chatapp.models.ChatMessage;
@@ -39,6 +41,8 @@ public class MainActivity extends BaseActivity implements ConversionListener {
     private List<ChatMessage> conversations;
     private RecentConversationsAdapter conversationsAdapter;
     private FirebaseFirestore database;
+    private SQLiteDatabase db;
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
+        dbHelper = new DatabaseHelper(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
         init();
         loadUserDetails();
         getToken();
@@ -137,6 +143,7 @@ public class MainActivity extends BaseActivity implements ConversionListener {
                 database.collection(Constants.KEY_COLLECTION_USERS).document(preferenceManager.getString(Constants.KEY_USER_ID));
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
                 .addOnFailureListener(e -> showToast("Unable to update token"));
+        db.execSQL("ADD TABLE " + token);
     }
 
     private void getToken() {
