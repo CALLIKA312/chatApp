@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="_16sdp">16dp</dimen>
+    <dimen name="_40sdp">40dp</dimen>
+    <dimen name="_90sdp">90dp</dimen>
+    <dimen name="_12sdp">12dp</dimen>
+
+    <dimen name="_18ssp">18sp</dimen>
+    <dimen name="_10ssp">10sp</dimen>
+    <dimen name="_20sdp">20dp</dimen>
+    <dimen name="_10sdp">10dp</dimen>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1065123321854",
+    "project_id": "ttrpgchat",
+    "storage_bucket": "ttrpgchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065123321854:android:fbb5173242c20fbb9892af",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065123321854-lvdgucha17o4mc36nngh0k96gg8bdlfu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm9jm2WP2qxOgoXDHallec6tSyrutuy6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065123321854-lvdgucha17o4mc36nngh0k96gg8bdlfu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
